@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import conwayBanner from './assets/phbanner.jpeg'
-import './App.css'
+//import './App.css'
+import NavBar from './components/header/Navbar'
 
 function App() {
 
   return (
     <>
+    
     <div>     
       <h1>Encyclopedia Conway!</h1>
+    <NavBar/>
     </div>
 
       <img src={conwayBanner} className='banner' alt="picture of downtown Conway, AR"/>
