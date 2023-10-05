@@ -2,7 +2,10 @@
 
 const Votiing = () => {
   return (
-    <div>Votiing</div>
+    <div>
+      <h1>Votiing
+      </h1>
+      </div>
   )
 }
 

@@ -2,7 +2,10 @@
 
 const WalkInClinics = () => {
   return (
-    <div>WalkInClinics</div>
+    <div>
+      <h1>WalkInClinics
+      </h1>
+    </div>
   )
 }
 

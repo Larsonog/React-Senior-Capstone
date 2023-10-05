@@ -1,7 +1,10 @@
 
 const SecondHandShops = () => {
   return (
-    <div>SecondHandShops</div>
+    <div>
+      <h1>SecondHandShops
+      </h1>
+      </div>
   )
 }
 
