@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 //import './App.css';
 import NavBar from './components/header/Navbar';
+import Footer from './components/footer/Footer';
 import Home from './pages/1.home/Home';
 import Events from './pages/2.events/Events';
 import RoadWork from './pages/3.roadWork/RoadWork';
@@ -10,6 +11,7 @@ import SecondHandShops from './pages/5.secondHandShops/SecondHandShops';
 import Restaurants from './pages/6.restaurants/Restaurants';
 import Voting from './pages/7.voting/Voting';
 import WalkInClinics from './pages/8.walkInClinics/WalkInClinics';
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
             <Route  path='/voting' element={<Voting />} />
             <Route  path='/walkinclinics' element={<WalkInClinics />} />
           </Routes>
+          <Footer/>
         </Router>
       </div>
   
