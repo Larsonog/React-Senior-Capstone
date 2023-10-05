@@ -4,9 +4,9 @@ const Restaurants = () => {
   return (
     <div>
       <h1>
-      Restaurants
+        Restaurants
       </h1>
-      </div>
+    </div>
   )
 }
 

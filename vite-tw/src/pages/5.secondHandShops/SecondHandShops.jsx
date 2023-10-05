@@ -4,7 +4,7 @@ const SecondHandShops = () => {
     <div>
       <h1>SecondHandShops
       </h1>
-      </div>
+    </div>
   )
 }
 

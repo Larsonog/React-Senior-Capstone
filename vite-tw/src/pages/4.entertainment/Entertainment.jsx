@@ -5,7 +5,7 @@ const Entertainment = () => {
     <div>
       <h1>Entertainment
       </h1>
-      </div>
+    </div>
   )
 }
 

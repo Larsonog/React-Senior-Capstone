@@ -10,7 +10,7 @@ const navigation = [
   { name: 'Second Hand Shops', href: '/secondHandShops', current: false },
   { name: 'Restaurants', href: '/restaurants', current: false },
   { name: 'Voting', href: '/voting', current: false },
-  { name: 'Walk-in Clinics', href: 'walkInClinics', current: false },
+  { name: 'Walk-in Clinics', href: '/walkInClinics', current: false },
 ]
 
 function classNames(...classes) {
