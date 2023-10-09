@@ -9,3 +9,4 @@ Currently, two official plugins are available:
 
 
 the tutorial for the navbar is: https://youtu.be/p8ZjHpMo-E4?si=wBQjBSDcNTfN7epU
+tailwindcss for vite: https://tailwindcss.com/docs/guides/vite
