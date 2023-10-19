@@ -1,38 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { database } from './firebase_setup/firebase';
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css'
 
-function Calendar() {
-  const [events, setEvents] = useState([]);
+function Calendar1() {
+    const [date, setDate] = useState(new Date())
+    return (
+        <div className="app">
+            <h1 className="header">React Calendar</h1>
+            <div className="calendar-container">
+                <Calendar onChange={setDate} value={date} />
+            </div>
+            <div className="text-center">
+                Selected date: {date.toDateString()}
+            </div>
+        </div>
+    )
 
-  useEffect(() => {
-    // Fetch events from Firebase when the component mounts
-    const eventsRef = database.ref('events');
-    eventsRef.on('value', (snapshot) => {
-      const eventData = snapshot.val();
-      if (eventData) {
-        const eventArray = Object.values(eventData);
-        setEvents(eventArray);
-      }
-    });
-
-    // Cleanup the Firebase listener when the component unmounts
-    return () => {
-      eventsRef.off();
-    };
-  }, []);
-
-  return (
-    <div>
-      <h2>Calendar</h2>
-      <ul>
-        {events.map((event) => (
-          <li key={event.id}>
-            <strong>{event.title}</strong> - {event.date}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
 }
 
-export default Calendar;
+export default Calendar1;
