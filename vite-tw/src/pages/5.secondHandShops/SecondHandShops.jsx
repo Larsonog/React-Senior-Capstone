@@ -7,8 +7,9 @@ const SecondHandShops = () => {
   return (
     <div>
       <h1>SecondHandShops
-      <ConwayMap/>
+      
       </h1>
+      <ConwayMap/>
     </div>
   )
 }
