@@ -1,8 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState }from'react';
 
-
-
-const RoadWork = () => {
+function RoadWork () {
   let[htmlFileString, setHtmlFileString] = useState();
 
   async function fetchHtml() {
