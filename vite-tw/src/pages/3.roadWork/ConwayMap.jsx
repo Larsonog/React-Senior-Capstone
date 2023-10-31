@@ -1,32 +1,48 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect, useRef } from 'react';
+import 'leaflet-routing-machine';
+import 'leaflet/dist/leaflet.css';
+import { LMap, LTileLayer } from 'react-leaflet';
+
+
+// Set your MapQuest API key here
+const apiKey = 'kRhaZ53vaQdSn1jTlnffykgLaJDPJ0nF';
+MQ.key = apiKey;
 
 function ConwayMap() {
-  const conwayPosition = [35.0887, -92.4421];
+  const mapRef = useRef();
 
-  // Define an array of second-hand shop locations with coordinates and labels
-  const secondHandShops = [
-    { name: 'Shop 1', coordinates: [35.0901, -92.4489] },
-    { name: 'Shop 2', coordinates: [35.0885, -92.4442] },
-    { name: 'Shop 3', coordinates: [35.0863, -92.4381] },
-    // Add more shops as needed
-  ];
+  useEffect(() => {
+    const map = mapRef.current.leafletElement;
+    const directions = MQ.routing.directions();
+
+    // Set your MapQuest start and end coordinates here
+    directions.route({
+      locations: [
+        'New York, NY',
+        'Los Angeles, CA',
+      ],
+    });
+
+    MQ.routing.routeLayer({
+      directions: directions,
+    }).addTo(map);
+  }, []);
 
   return (
-    <MapContainer center={conwayPosition} zoom={13} style={{ height: '500px', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    <LMap
+      ref={mapRef}
+      center={[40.7128, -74.0060]}
+      zoom={5}
+      style={{ width: '100%', height: '400px' }}
+    >
+      <LTileLayer
+        url="http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg"
+        subdomains="1234"
       />
-
-      {/* Map through the second-hand shop locations and create markers with popups */}
-      {secondHandShops.map((shop, index) => (
-        <Marker key={index} position={shop.coordinates}>
-          <Popup>{shop.name}</Popup>
-        </Marker>
-      ))}
-    </MapContainer>
+    </LMap>
   );
 }
 
 export default ConwayMap;
+
+// Trying MapQuest API for leaflet
