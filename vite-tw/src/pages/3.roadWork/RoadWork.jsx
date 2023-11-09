@@ -1,9 +1,10 @@
 import React, { useEffect, useState }from'react';
 import ConwayMap from './default/ConwayMap';
+import MyComponent from './googleMaps/googleMapsReact';
 
 function RoadWork () {
   return(
-    <ConwayMap/>
+    <MyComponent/>
   )
 
 }

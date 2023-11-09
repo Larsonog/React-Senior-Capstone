@@ -16,6 +16,7 @@
     "@react-google-maps/api": "^2.19.2",
     "axios": "^1.5.1",
     "firebase": "^10.5.0",
+    "google-maps-react": "^2.0.6",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",
     "moment": "^2.29.4",
