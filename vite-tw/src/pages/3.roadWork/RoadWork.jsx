@@ -1,20 +1,11 @@
 import React, { useEffect, useState }from'react';
+import ConwayMap from './default/ConwayMap';
 
 function RoadWork () {
-  let[htmlFileString, setHtmlFileString] = useState();
-
-  async function fetchHtml() {
-    setHtmlFileString(await (await fetch(`TrafficMap.html`)).text());
-  }
-  useEffect(() => {
-    fetchHtml();
-  }, []);
-
   return(
-    <div className="App">
-      <div dangerouslySetInnerHTML={{ __html: htmlFileString }}></div>
-    </div>
-  );
+    <ConwayMap/>
+  )
+
 }
 
 
