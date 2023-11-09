@@ -1,5 +1,5 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, TrafficLayer, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '700px',
@@ -30,7 +30,7 @@ function MyComponent() {
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
   }, [])
-
+  //var trafficLayer = new google.maps.TrafficLayer();
   return isLoaded ? (
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -39,7 +39,7 @@ function MyComponent() {
         onLoad={onLoad}
         onUnmount={onUnmount}
         
-      >
+      > 
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>
@@ -47,3 +47,5 @@ function MyComponent() {
 }
 
 export default React.memo(MyComponent)
+
+// https://stackoverflow.com/questions/38543164/adding-layer-to-google-map-adding-toggle-for-traffic-layer
