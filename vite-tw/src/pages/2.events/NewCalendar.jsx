@@ -1,3 +1,4 @@
+//https://www.geeksforgeeks.org/event-calendar-using-react/
 import React, { useState } from "react"; 
 import Calendar from "react-calendar"; 
 import "react-calendar/dist/Calendar.css"; 
@@ -50,7 +51,7 @@ const App = () => {
 
 	return ( 
 		<div className="app"> 
-			<h1> GeeksforGeeks Calendar Application </h1> 
+			<h1> Events Happening In Conway! </h1> 
 			<div className="container"> 
 				<div className="calendar-container"> 
 					<Calendar 
